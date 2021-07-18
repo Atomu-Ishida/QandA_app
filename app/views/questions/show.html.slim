@@ -1,0 +1,30 @@
+h1 質問の詳細
+
+.nav.justify-content-end
+  - if @current_user.present? && @question.user_id == @current_user.id
+    = link_to '編集', edit_question_path, class: 'btn btn-primary mr-1 float-right'
+    = link_to '削除', @question, method: :delete, data: { confirm: "質問「#{@question.title}」を削除します。よろしいですか？" }, class: 'btn btn-danger float-right'
+  
+  
+table.table.table-hover
+  tbody
+    tr
+      th = Question.human_attribute_name(:title)
+      td = @question.title
+    tr
+      th = Question.human_attribute_name(:description)
+      td = simple_format(h(@question.description), {}, sanitize: false, wrapper_tag: "div" )
+
+= form_with model:[@question, @answer], local: true do |f|
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows:5, class: 'form-control', id: 'answer_description'
+  = f.submit '回答する' , class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  tbody
+    - @question.answers.each do |answer|
+      tr
+        td= answer.description
+        

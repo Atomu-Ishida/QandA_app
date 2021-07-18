@@ -1,0 +1,23 @@
+= search_form_for @q, class: 'my-5' do |f| 
+  .form-group.row
+    .col-sm-10
+      = f.search_field :name_cont, class: 'form-control', placeholder: '検索ワード'
+    .col-sm-2
+      = f.submit class: ' btn btn-outline-primary'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+  tbody
+    - @users.each do |user|
+      tr
+        td= link_to user
+          - if user.avatar?
+            = image_tag user.avatar.url, :class => 'rounded-circle', :size =>'32x32' 
+          - else
+            = image_tag 'icons8-customer-100', :class => 'rounded-circle', :size =>'32x32'
+        td= link_to user.name, user
+        
+        
+.mb-3
+  = paginate @users

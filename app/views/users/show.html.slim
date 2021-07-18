@@ -1,0 +1,27 @@
+h1 ユーザー詳細
+
+- if @user.id == @current_user.id
+  = link_to '編集', edit_user_path, class: 'btn btn-primary float-right'
+/ ユーザーを編集できるのは自分だけ
+  
+table.table.table-hover
+  tbody
+    tr
+      th= User.human_attribute_name(:name)
+      td= @user.name
+    tr
+      th= User.human_attribute_name(:email)
+      td= @user.email
+    tr
+      th= User.human_attribute_name(:avatar)
+      td
+        - if @user.avatar?
+          = image_tag @user.avatar.url, :class => 'rounded-circle', :size =>'32x32'
+        - else
+          = image_tag 'icons8-customer-100', :class => 'rounded-circle', :size =>'32x32'
+    tr
+      th= User.human_attribute_name(:created_at)
+      td= @user.created_at
+    tr
+      th= User.human_attribute_name(:updated_at)
+      td= @user.updated_at

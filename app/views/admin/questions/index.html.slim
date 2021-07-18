@@ -1,0 +1,25 @@
+h1 質問一覧
+
+= search_form_for [:admin,@q], class: 'my-5' do |f| 
+  .form-group.row
+    .col-sm-10
+      = f.search_field :title_cont, class: 'form-control', placeholder: '検索ワード'
+    .col-sm-2
+      = f.submit class: ' btn btn-outline-primary'
+
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Question.human_attribute_name(:title)
+      th = Question.human_attribute_name(:created_at)
+  tbody
+   - @questions.each do |question|
+     tr 
+        td = link_to question.title, question
+        td = question.created_at
+        td 
+          = link_to  "削除", [:admin, question], method: :delete, data: {confirm: "質問「#{question.title}」を削除します。よろしいですか？"}, class: 'btn btn-danger' 
+.mb-3
+  = paginate @questions

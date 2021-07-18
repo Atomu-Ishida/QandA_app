@@ -1,0 +1,13 @@
+h1 回答の新規登録
+
+.nav.justify-content-end
+  = link_to '一覧', answers_path, class: 'nav-link'
+
+= form_with model: @answer, local: true do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control', id: 'answer_name'
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows:5, class: 'form-control', id: 'answer_description'
+  = f.submit nil, class: 'btn btn-primary'

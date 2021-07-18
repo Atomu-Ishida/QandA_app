@@ -1,0 +1,15 @@
+current directory: /Users/ishidaatomu/Desktop/QandA_practice/QandA/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+/Users/ishidaatomu/.rbenv/versions/2.5.1/bin/ruby -I /Users/ishidaatomu/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20210625-5757-1gnx17a.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ishidaatomu/Desktop/QandA_practice/QandA/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/ishidaatomu/Desktop/QandA_practice/QandA/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/ishidaatomu/Desktop/QandA_practice/QandA/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210625-5757-lhvsdz/bootsnap

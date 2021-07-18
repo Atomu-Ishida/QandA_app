@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+    models:
+      question: 質問
+    attributes:
+      question:
+        id: ID
+        title: 題名
+        description: 質問内容
+        created_at: 登録日時
+        updated_at: 更新日時
+      user:
+        id: ID
+        name: 名前
+        avatar: ユーザー画像
+        email: メールアドレス
+        admin: 管理者権限
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        created_at: 登録日時
+        updated_at: 更新日時
+      answer:
+        title: 題名
+        description: 回答内容

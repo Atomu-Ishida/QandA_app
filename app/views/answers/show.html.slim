@@ -1,0 +1,22 @@
+h1 回答内容
+
+table.table.table-hover
+  tbody
+    tr
+      th= Answer.human_attribute_name(:id)
+      td= @answer.id
+    tr
+      th= Answer.human_attribute_name(:title)
+      td= @answer.title
+    tr
+      th= Answer.human_attribute_name(:description)
+      td= simple_format(h(@answer.description),{}, sanitize:false, wrapper_tag: "div")
+    tr
+      th= Answer.human_attribute_name(:created_at)
+      td= @answer.created_at
+    tr
+      th= Answer.human_attribute_name(:updated_at)
+      td= @answer.updated_at
+
+= link_to '編集', edit_answer_path, class: 'btn btn-primary mr-3'
+= button_to '削除', @answer, method: :delete, data: { confirm: "質問を削除してよろしいですか？"}, class: 'btn btn-danger'

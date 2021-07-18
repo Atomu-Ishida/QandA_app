@@ -1,0 +1,6 @@
+h1 回答編集画面
+
+.nav.justify-content-end
+  = link_to '一覧', answers_path, class: 'nav-link'
+
+= render partial: 'form', locals: { answer: @answer }
